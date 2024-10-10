@@ -1,6 +1,6 @@
 ---
 import Navigation from "../components/Navigation.astro";
-import Button from "../components/Button.astro";
+const { title } = Astro.props;
 import "../styles/style.css";
 ---
 
@@ -10,16 +10,13 @@ import "../styles/style.css";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Hjem</title>
+    <title>{title}</title>
   </head>
   <body>
     <Navigation />
-    <h1>Hjem</h1>
-
+    <h1>{title}</h1>
     <main>
-      <Button variant="primary" size="small">TEXT</Button>
-      <Button variant="secondary" size="medium">TEXT</Button>
-      <Button variant="secondary" size="large">TEXT</Button>
+      <slot />
     </main>
   </body>
 </html>
